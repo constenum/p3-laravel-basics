@@ -15,6 +15,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return 'TODO: create home page';
+        return view('home');
     }
 }
