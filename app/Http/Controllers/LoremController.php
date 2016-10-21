@@ -31,6 +31,7 @@ class LoremController extends Controller
         # Validation
         $this -> validate($request, [
                 'number' => 'required|min:1',
+                'rbgroup' => 'required|in:"word","sentence","paragraph"'
             ]);
 
         # Form Data
@@ -41,19 +42,15 @@ class LoremController extends Controller
         $generator = new Generator();
 
         if ($radio == 'word') {
-            $words = $generator->getRandomWords($number);
-            echo implode('<p>', $words);
+            $results = $generator->getRandomWords($number);
         }
         if ($radio == 'sentence') {
-            $sentences = $generator->getSentences($number);
-            echo implode('<p>', $sentences);
+            $results = $generator->getSentences($number);
+
         }
         if ($radio == 'paragraph') {
-            $paragraphs = $generator->getParagraphs($number);
-            echo implode('<p>', $paragraphs);
+            $results = $generator->getParagraphs($number);
         }
-
-        # Redirect back to index page
-        return \Redirect::to('/lorem');
+        return Redirect::to('lorem')->with(implode('<p>', $results));
     }
 }

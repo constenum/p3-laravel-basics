@@ -15,13 +15,13 @@
 
     <div class="form-group">
         <div class="radio-inline">
-            <label><input type="radio" name="rbgroup" value="word">Generate Words</label>
+            <label><input type="radio" name="rbgroup" value="word" {{ old('radio.1')=="word" ? 'checked' : ''}}>Generate Words</label>
         </div>
         <div class="radio-inline">
-            <label><input type="radio" name="rbgroup" value="sentence">Generate Sentences</label>
+            <label><input type="radio" name="rbgroup" value="sentence" {{ old('radio.2')=="sentence" ? 'checked' : ''}}>Generate Sentences</label>
         </div>
         <div class="radio-inline">
-            <label><input type="radio" name="rbgroup" value="paragraph" checked="checked">Generate Paragraphs</label>
+            <label><input type="radio" name="rbgroup" value="paragraph" {{ old('radio.3')=="paragraph" ? 'checked' : ''}}>Generate Paragraphs</label>
         </div>
     </div>
 
@@ -40,5 +40,13 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <div class="results">
+        <? php
+        if(isset($results)) {
+            echo $results;
+        }
+        ?>
+    </div>
 </div>
 @endsection
