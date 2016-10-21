@@ -12,22 +12,22 @@
     <form method='POST' action='/lorem'>
 
     {{ csrf_field() }}
-    
+
     <div class="form-group">
         <div class="radio-inline">
-            <label><input type="radio" name="rbgroup">Generate Words</label>
+            <label><input type="radio" name="rbgroup" value="word">Generate Words</label>
         </div>
         <div class="radio-inline">
-            <label><input type="radio" name="rbgroup">Generate Sentences</label>
+            <label><input type="radio" name="rbgroup" value="sentence">Generate Sentences</label>
         </div>
         <div class="radio-inline">
-            <label><input type="radio" name="rbgroup" checked="checked">Generate Paragraphs</label>
+            <label><input type="radio" name="rbgroup" value="paragraph" checked="checked">Generate Paragraphs</label>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="numberOfWordsSentencesOrPagargraphs">Number of words, sentences or paragraphs to be generated</label>
-        <input type="text" class="form-control" id="numberOfWordsSentencesOrPagargraphs" placeholder="Enter number of words, sentences, or paragraphs">
+        <label for="number">Number of words, sentences or paragraphs to be generated</label>
+        <input type="text" class="form-control" id="number" name="number" placeholder="Enter number of words, sentences, or paragraphs">
     </div>
 
     @if(count($errors) > 0)

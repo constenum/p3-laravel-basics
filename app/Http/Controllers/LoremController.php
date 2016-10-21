@@ -24,8 +24,34 @@ class LoremController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function show(Request $request)
     {
-        return 'TODO: create lorem generator logic';
+        # Validation
+        $this -> validate($request, [
+                'number' => 'required|min:1',
+            ]);
+
+        # Form Data
+        $radio = $request->input('rbgroup');
+        $number = $request->input('number');
+
+        # Logic
+        $generator = new Badcow\LoremIpsum\Generator();
+
+        if ($radio == 'word') {
+            $words = $generator->getWords($number);
+            echo implode('<p>', $words);
+        }
+        if ($radio == 'sentence') {
+            $sentences = $generator->getSentences($number);
+            echo implode('<p>', $sentences);
+        }
+        if ($radio == 'paragraph') {
+            $paragraphs = $generator->getParagraphs($number);
+            echo implode('<p>', $paragraphs);
+        }
+
+        # Redirect back to index page
+        return \Redirect::to('/lorem');
     }
 }
