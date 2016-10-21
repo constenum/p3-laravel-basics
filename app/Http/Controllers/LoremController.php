@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Badcow\LoremIpsum\Generator;
+
 class LoremController extends Controller
 {
     /**
@@ -36,10 +38,10 @@ class LoremController extends Controller
         $number = $request->input('number');
 
         # Logic
-        $generator = new Badcow\LoremIpsum\Generator();
+        $generator = new Generator();
 
         if ($radio == 'word') {
-            $words = $generator->getWords($number);
+            $words = $generator->getRandomWords($number);
             echo implode('<p>', $words);
         }
         if ($radio == 'sentence') {
