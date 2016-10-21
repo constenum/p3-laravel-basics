@@ -15,7 +15,7 @@ class LoremController extends Controller
      */
     public function index()
     {
-        return 'TODO: create lorem index page';
+        return view('lorem.index');
     }
 
     /**

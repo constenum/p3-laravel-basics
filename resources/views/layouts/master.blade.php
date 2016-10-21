@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}">
 </head>
 
 <body>
@@ -26,11 +26,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Developer's Best Friend</a>
+                <a class="navbar-brand" href="{{ route('home.index') }}">Developer's Best Friend</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="{{ route('home.index') }}">Home</a></li>
                     <li><a href="{{ route('lorem.index') }}">Lorem Ipsum</a></li>
                     <li><a href="{{ route('user.index') }}">Random User</a></li>
                     <li><a href="{{ route('color.index') }}t">Color</a></li>
