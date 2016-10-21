@@ -17,7 +17,7 @@ class LoremController extends Controller
      */
     public function index()
     {
-        return view('lorem.index');
+        return view('lorem.index')->with('results', session('results'));
     }
 
     /**
@@ -30,8 +30,9 @@ class LoremController extends Controller
     {
         # Validation
         $this -> validate($request, [
-                'number' => 'required|min:1',
-                'rbgroup' => 'required|in:"word","sentence","paragraph"'
+                'radioButton' => 'required',
+                'numberOfWords,Sentences,OrParagraphs' => 'required|min:1'
+
             ]);
 
         # Form Data
@@ -51,6 +52,6 @@ class LoremController extends Controller
         if ($radio == 'paragraph') {
             $results = $generator->getParagraphs($number);
         }
-        return Redirect::to('lorem')->with(implode('<p>', $results));
+        return \Redirect::to('lorem')->with('results', implode('<p>', $results));
     }
 }
