@@ -21,23 +21,22 @@ class LoremController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Show a newly created resource.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request)
     {
+        # Form Data
+        $radio = $request->input('radioButton');
+        $number = $request->input('numberOfWords,Sentences,OrParagraphs');
+
         # Validation
         $this -> validate($request, [
                 'radioButton' => 'required',
-                'numberOfWords,Sentences,OrParagraphs' => 'required|min:1'
-
+                'numberOfWords,Sentences,OrParagraphs' => 'required|integer|min:1|max:12',
             ]);
-
-        # Form Data
-        $radio = $request->input('rbgroup');
-        $number = $request->input('number');
 
         # Logic
         $generator = new Generator();
@@ -47,11 +46,11 @@ class LoremController extends Controller
         }
         if ($radio == 'sentence') {
             $results = $generator->getSentences($number);
-
         }
         if ($radio == 'paragraph') {
             $results = $generator->getParagraphs($number);
         }
+
         return \Redirect::to('lorem')->with('results', implode('<p>', $results));
     }
 }

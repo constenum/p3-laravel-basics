@@ -10,14 +10,6 @@ body {
   margin-top: 100px;
 }
 
-.home-img {
-    margin: 0 auto;
-}
-
-.home-well {
-    min-height: 400px;
-}
-
 .footer {
   position: absolute;
   bottom: 0;
@@ -28,3 +20,18 @@ body {
   height: 60px;
   color: white;
 }
+
+/* custom styles
+-------------------------------------------------- */
+.home-img {
+    margin: 0 auto;
+}
+
+.home-well {
+    min-height: 400px;
+}
+
+.fieldset {
+  border: 1px solid #ccc;
+  padding: 10px
+ }
