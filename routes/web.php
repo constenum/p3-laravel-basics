@@ -20,20 +20,14 @@ Route::get('/lorem', 'LoremController@index')->name('lorem.index');
 # Process Lorem Ipsum generator form
 Route::post('/lorem', 'LoremController@show')->name('lorem.show');
 
-# Index for Lorem Ipsum generator
+# Index for random user generator
 Route::get('/user', 'UserController@index')->name('user.index');
 
-# Process Lorem Ipsum generator form
+# Process random user generator form
 Route::post('/user', 'UserController@show')->name('user.show');
 
-# Index for Lorem Ipsum generator
-Route::get('/color', 'ColorController@index')->name('color.index');
-
-# Process Lorem Ipsum generator form
-Route::post('/color', 'ColorController@show')->name('color.show');
-
-# Index for Lorem Ipsum generator
+# Index for xkcd password generator
 Route::get('/xkcd', 'XkcdController@index')->name('xkcd.index');
 
-# Process Lorem Ipsum generator form
+# Process xkcd password generator form
 Route::post('/xkcd', 'XkcdController@show')->name('xkcd.show');
