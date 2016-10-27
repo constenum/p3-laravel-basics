@@ -33,8 +33,8 @@
                     <li><a href="{{ route('home.index') }}">Home</a></li>
                     <li><a href="{{ route('lorem.index') }}">Lorem Ipsum</a></li>
                     <li><a href="{{ route('user.index') }}">Random User</a></li>
-                    <li><a href="{{ route('color.index') }}t">Color</a></li>
-                    <li><a href="{{ route('xkcd.index') }}t">xkcd Password</a></li>
+                    <li><a href="{{ route('color.index') }}">Color</a></li>
+                    <li><a href="{{ route('xkcd.index') }}">xkcd Password</a></li>
                 </ul>
             </div>
         </div>
