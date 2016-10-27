@@ -49,3 +49,8 @@ legend.border {
 button.btn-marg, a.btn-marg {
     margin-bottom: 20px;
 }
+
+.xkcd {
+    font-size: 28px !important;
+    text-align: center;
+}

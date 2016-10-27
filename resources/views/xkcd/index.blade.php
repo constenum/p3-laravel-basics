@@ -84,7 +84,9 @@
         <h3>Lorem Ipsum</h3>
         <p>
             <div class="well well-lg">
-                {!! $results !!}
+                <p class="xkcd">
+                    {!! $results !!}
+                </p>
             </div>
         </p>
     @endif
