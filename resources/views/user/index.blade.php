@@ -93,17 +93,19 @@
 
     @if (isset($results))
         <h3>Random Users</h3>
-        <p><div class="well well-lg">
-            @for ($row = 0; $row < count($results); $row++)
-                @php $userRow = $row + 1 @endphp
-                <b>User {{ $userRow }}</b>
-                <ul>
-                    @foreach ($results[$row] as $key => $value)
-                        <li><b> {{ $key }}:</b> {{ $value }}
-                    @endforeach
-                </ul>
-            @endfor
-        </div></p>
+        <p>
+            <div class="well well-lg">
+                @for ($row = 0; $row < count($results); $row++)
+                    @php $userRow = $row + 1 @endphp
+                    <b>User {{ $userRow }}</b>
+                    <ul>
+                        @foreach ($results[$row] as $key => $value)
+                            <li><b> {{ $key }}:</b> {{ $value }}
+                        @endforeach
+                    </ul>
+                @endfor
+            </div>
+        </p>
     @endif
 </div>
 @endsection
