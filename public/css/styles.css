@@ -1,56 +1,23 @@
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  margin-top: 100px;
+.main-links a:nth-child(n+2) {
+    margin: 2em 0;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  padding: 20px 0;
-  margin: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  color: white;
+h1 {
+    color: blue;
 }
 
-/* custom styles
--------------------------------------------------- */
-.home-img {
-    margin: 0 auto;
-}
-
-.home-well {
-    min-height: 300px;
-}
-
-fieldset.border {
-    border: 1px solid #ddd;
-    padding: 0 20px 20px 20px;
-    margin: 0 0 15px 0;
-}
-
-legend.border {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: left;
-    width:auto;
-    padding:0 10px;
-    border-bottom:none;
-}
-
-button.btn-marg, a.btn-marg {
-    margin-bottom: 20px;
-}
-
-.xkcd {
-    font-size: 28px !important;
+h1, h4 {
     text-align: center;
+}
+
+.spacing {
+    margin-top: 20px;
+}
+
+.showRow {
+    display: table-row;
+}
+
+.hideRow, .hideColumn {
+    display: none;
 }
